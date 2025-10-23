@@ -118,6 +118,7 @@
             padding: 60px 20px;
             text-align: center;
             box-shadow: 0 -5px 30px rgba(56, 189, 248, 0.2);
+            position: relative;
         }
 
         .quiz-section h2 {
@@ -422,6 +423,91 @@
             margin: 40px 0 20px;
             opacity: 0.7;
         }
+
+        /* === LOCK OVERLAY FOR QUIZ === */
+        .quiz-lock-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(2, 6, 23, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 20;
+            padding: 40px 20px;
+        }
+
+        .quiz-lock-card {
+            background: linear-gradient(180deg, rgba(6,10,30,0.95), rgba(13,18,40,0.95));
+            border-radius: 14px;
+            padding: 28px;
+            width: 100%;
+            max-width: 520px;
+            box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+            text-align: center;
+            border: 1px solid rgba(56,189,248,0.12);
+        }
+
+        .quiz-lock-card h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .quiz-lock-card p {
+            color: #94a3b8;
+            margin-bottom: 18px;
+        }
+
+        .password-input {
+            width: calc(100% - 24px);
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(56,189,248,0.18);
+            background: rgba(8,12,23,0.6);
+            color: #e6f6ff;
+            font-size: 1rem;
+            outline: none;
+            margin-bottom: 12px;
+        }
+
+        .password-input:focus {
+            box-shadow: 0 0 20px rgba(56,189,248,0.15);
+        }
+
+        .unlock-btn {
+            background: linear-gradient(90deg, #2563eb, #38bdf8);
+            color: #f0f9ff;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 8px 30px rgba(56,189,248,0.12);
+        }
+
+        .unlock-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .lock-info {
+            margin-top: 10px;
+            color: #fca5a5;
+            min-height: 20px;
+        }
+
+        /* small screens adjustments for overlay */
+        @media (max-width: 600px) {
+            .quiz-lock-card {
+                padding: 18px;
+            }
+
+            .password-input {
+                font-size: 0.95rem;
+                padding: 10px;
+            }
+        }
+
     </style>
 </head>
 
@@ -444,16 +530,31 @@
 
 
         <!-- === KUIS === -->
-        <section class="quiz-section">
+        <!-- NOTE: quiz-section tetap di tempat; overlay .quiz-lock-overlay hanya menutupi section kuis -->
+        <section class="quiz-section" id="quizSection">
             <h2>🧠 SERU SERUAN YOK</h2>
-            <div class="quiz-intro" id="quizIntro">
+
+            <!-- LOCK OVERLAY (muncul di atas quiz-section sampai password benar) -->
+            <div class="quiz-lock-overlay" id="quizLock">
+                <div class="quiz-lock-card" role="dialog" aria-modal="true" aria-labelledby="lockTitle">
+                    <h3 id="lockTitle">Kunci Quiz</h3>
+                    <p>Masukkan kata sandi untuk membuka akses ke kuis.</p>
+                    <input type="password" id="passwordInput" class="password-input" placeholder="Masukkan kata sandi..." />
+                    <div>
+                        <button id="unlockBtn" class="unlock-btn">🔓 Buka Kuis</button>
+                    </div>
+                    <div class="lock-info" id="lockInfo" aria-live="polite"></div>
+                </div>
+            </div>
+
+            <div class="quiz-intro" id="quizIntro" aria-hidden="true">
                 <p>Uji pemahamanmu tentang dunia keamanan digital!<br />Kamu akan mendapatkan 5 pertanyaan dengan waktu
                     7
                     detik per soal.</p>
                 <button class="start-btn" id="startBtn">🚀 Mulai Kuis</button>
             </div>
 
-            <div class="quiz-box" id="quizBox">
+            <div class="quiz-box" id="quizBox" aria-hidden="true">
                 <div class="timer" id="timer">⏱ 7s</div>
                 <h3 id="question"></h3>
                 <div id="options"></div>
@@ -498,6 +599,9 @@
         <footer>© 2025| Design by Group 1 | Class XII-2</footer>
 
         <script>
+            /* =========================
+               QUIZ DATA & LOGIC (sama seperti sebelumnya)
+               ========================= */
             const startBtn = document.getElementById("startBtn");
             const quizIntro = document.getElementById("quizIntro");
             const quizBox = document.getElementById("quizBox");
@@ -518,16 +622,16 @@
                     ]
                 },
                 {
-                    question: "2. Apa role Ka Cilla di tim ",
+                    question: "2. Jumlah terbesar kebocoran data ada pada kasus ",
                     options: [
-                        { text: "Researcher", correct: true },
-                        { text: "Data Analyst", correct: false },
-                        { text: "Chief", correct: false },
-                        { text: "Keamanan", correct: false }
+                        { text: "BPJS Ketenagakerjaan", correct: true },
+                        { text: "KPU", correct: false },
+                        { text: "BPJS Kesehatan", correct: false },
+                        { text: "BSSN", correct: false }
                     ]
                 },
                 {
-                    question: "3. Kementerian apa yang bertugas dalam menangani hal informasi teknologi?",
+                    question: "3. Kementerian apa yang bertugas dalam menangani hal informasi dan teknologi?",
                     options: [
                         { text: "Kominfo", correct: false },
                         { text: "BIN", correct: false },
@@ -562,8 +666,11 @@
             let timeLeft = 10;
 
             startBtn.addEventListener("click", () => {
+                // start hanya berfungsi bila unlocked (overlay sudah hilang)
                 quizIntro.style.display = "none";
                 quizBox.style.display = "block";
+                quizIntro.setAttribute('aria-hidden', 'true');
+                quizBox.setAttribute('aria-hidden', 'false');
                 loadQuestion();
             });
 
@@ -621,6 +728,7 @@
 
             function showResult() {
                 quizBox.style.display = "none";
+                quizBox.setAttribute('aria-hidden', 'true');
                 resultEl.innerHTML = `
       <h3>🎯 Hasil Kuis Kamu</h3>
       <p>Skor Akhir: <strong>${score}/${quizData.length}</strong></p>
@@ -659,6 +767,70 @@
     `;
             }
 
+            /* =========================
+               PASSWORD LOCK LOGIC (baru)
+               - overlay #quizLock menutup area kuis
+               - password default: 'group1' (ubah di const PASSWORD)
+               ========================= */
+            const quizLock = document.getElementById('quizLock');
+            const passwordInput = document.getElementById('passwordInput');
+            const unlockBtn = document.getElementById('unlockBtn');
+            const lockInfo = document.getElementById('lockInfo');
+
+            // Ubah password di sini jika mau:
+            const PASSWORD = 'horehorehore';
+
+            // Optional: batasi percobaan
+            let attemptsLeft = 5;
+
+            function unlockAttempt() {
+                const val = passwordInput.value ?? '';
+                if (!val.trim()) {
+                    lockInfo.textContent = 'Masukkan kata sandi terlebih dahulu.';
+                    return;
+                }
+
+                if (val === PASSWORD) {
+                    // berhasil unlock: sembunyikan overlay, aktifkan kuis
+                    quizLock.style.display = 'none';
+                    quizIntro.setAttribute('aria-hidden', 'false');
+                    quizIntro.style.display = 'block';
+                    lockInfo.textContent = '';
+                    passwordInput.value = '';
+                    // fokus pada tombol mulai supaya UX bagus
+                    setTimeout(() => startBtn.focus(), 50);
+                } else {
+                    attemptsLeft--;
+                    if (attemptsLeft <= 0) {
+                        lockInfo.textContent = 'Terlalu banyak percobaan. Akses diblok sementara.';
+                        unlockBtn.disabled = true;
+                        passwordInput.disabled = true;
+                    } else {
+                        lockInfo.textContent = `Kata sandi salah. Percobaan tersisa: ${attemptsLeft}.`;
+                        // animasi shake sederhana
+                        const card = document.querySelector('.quiz-lock-card');
+                        card.animate([
+                            { transform: 'translateX(0)' },
+                            { transform: 'translateX(-8px)' },
+                            { transform: 'translateX(8px)' },
+                            { transform: 'translateX(0)' }
+                        ], { duration: 300 });
+                    }
+                }
+            }
+
+            unlockBtn.addEventListener('click', unlockAttempt);
+            passwordInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') unlockAttempt();
+            });
+
+            // Pastikan saat overlay aktif, elemen quiz tidak dapat diakses (untuk screen reader + keyboard)
+            // quizIntro dan quizBox disembunyikan saat overlay muncul; mereka di-set visible setelah unlock.
+            // Default: overlay tampil, intro hidden (sudah diset di HTML)
+            quizIntro.style.display = "none";
+            quizIntro.setAttribute('aria-hidden', 'true');
+            quizBox.style.display = "none";
+            quizBox.setAttribute('aria-hidden', 'true');
 
         </script>
 
