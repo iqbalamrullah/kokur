@@ -402,15 +402,15 @@
        
     <!-- === KUIS === -->
     <section class="quiz-section">
-        <h2>🧠 Kuis Keamanan Digital Tingkat Lanjut</h2>
+        <h2>🧠 SERU SERUAN YOK</h2>
         <div class="quiz-intro" id="quizIntro">
-            <p>Uji pemahamanmu tentang dunia keamanan digital!<br />Kamu akan mendapatkan 5 pertanyaan dengan waktu 10
+            <p>Uji pemahamanmu tentang dunia keamanan digital!<br />Kamu akan mendapatkan 5 pertanyaan dengan waktu 7
                 detik per soal.</p>
             <button class="start-btn" id="startBtn">🚀 Mulai Kuis</button>
         </div>
 
         <div class="quiz-box" id="quizBox">
-            <div class="timer" id="timer">⏱ 10s</div>
+            <div class="timer" id="timer">⏱ 7s</div>
             <h3 id="question"></h3>
             <div id="options"></div>
             <button class="next-btn" id="nextBtn">Selanjutnya</button>
@@ -465,30 +465,30 @@
 
         const quizData = [
             {
-                question: "1. Apa perbedaan utama antara serangan DDoS dan DoS?",
+                question: "1. Berapa total jumlah kasus dari 2020-2024",
                 options: [
-                    { text: "DDoS melibatkan banyak perangkat untuk menyerang satu target", correct: true },
-                    { text: "DoS lebih sulit dideteksi", correct: false },
-                    { text: "DDoS hanya terjadi di jaringan lokal", correct: false },
-                    { text: "DoS adalah versi terenkripsi dari DDoS", correct: false }
+                    { text: "5+1 kasus", correct: false },
+                    { text: "7+3 kasus", correct: false },
+                    { text: "9-0 kasus", correct: true },
+                    { text: "10-2 kasus", correct: false }
                 ]
             },
             {
-                question: "2. Teknik keamanan apa yang digunakan untuk memverifikasi integritas pesan digital?",
+                question: "2. Apa role di tim Ka Cilla",
                 options: [
-                    { text: "Hashing", correct: true },
-                    { text: "Data Compression", correct: false },
-                    { text: "Tokenization", correct: false },
-                    { text: "Steganography", correct: false }
+                    { text: "Researcher", correct: true },
+                    { text: "Data Analyst", correct: false },
+                    { text: "Chief", correct: false },
+                    { text: "Keamanan", correct: false }
                 ]
             },
             {
-                question: "3. Dalam konteks keamanan siber, apa fungsi dari protokol TLS dibanding HTTP biasa?",
+                question: "3. Kementerian apa yang bertugas dalam menangani hal informasi teknologi?",
                 options: [
-                    { text: "Menyediakan enkripsi end-to-end antara klien dan server", correct: true },
-                    { text: "Menambah kecepatan transfer data", correct: false },
-                    { text: "Menghapus cookies dari browser", correct: false },
-                    { text: "Mengizinkan akses anonim", correct: false }
+                    { text: "Kominfo", correct: false },
+                    { text: "BIN", correct: false },
+                    { text: "BSSN", correct: false },
+                    { text: "Komdigi", correct: true }
                 ]
             },
             {
@@ -525,7 +525,7 @@
 
         function startTimer() {
             clearInterval(timer);
-            timeLeft = 10;
+            timeLeft = 7;
             timerEl.textContent = `⏱ ${timeLeft}s`;
 
             timer = setInterval(() => {
