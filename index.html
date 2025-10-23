@@ -2,496 +2,593 @@
 <html lang="id">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XII-2 | 1 - KEAMANAN DIGITAL</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XII-2 | 1 - KEAMANAN DIGITAL</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at 30% 30%, #020617 0%, #0a0f2b 50%, #000 100%);
-      color: white;
-      overflow-x: hidden;
-      min-height: 100vh;
-      position: relative;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* === BACKGROUND FUTURISTIK === */
-    .bg-futuristik {
-      position: fixed;
-      inset: 0;
-      z-index: -3;
-      background: linear-gradient(135deg, #020617, #0f172a, #1e3a8a);
-      background-size: 200% 200%;
-      animation: gradientShift 12s infinite alternate ease-in-out;
-      filter: blur(20px);
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at 30% 30%, #020617 0%, #0a0f2b 50%, #000 100%);
+            color: white;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
 
-    @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
+        /* === BACKGROUND FUTURISTIK === */
+        .bg-futuristik {
+            position: fixed;
+            inset: 0;
+            z-index: -3;
+            background: linear-gradient(135deg, #020617, #0f172a, #1e3a8a);
+            background-size: 200% 200%;
+            animation: gradientShift 12s infinite alternate ease-in-out;
+            filter: blur(20px);
+        }
 
-      100% {
-        background-position: 100% 50%;
-      }
-    }
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
 
-    /* === POSTER === */
-    .poster-wrapper {
-      display: flex;
-      justify-content: center;
-      margin: 0 auto;
-      max-width: 1100px;
-      padding: 60px 20px;
-    }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
 
-    .poster {
-      background: url('./XII-2_KELOMPOK%201.png') no-repeat center top;
-      background-size: contain;
-      width: 100%;
-      height: 1900px;
-      border-radius: 20px;
-      box-shadow: 0 0 80px rgba(14, 165, 233, 0.3);
-      transition: transform 0.8s ease, box-shadow 0.8s ease;
-    }
+        /* === POSTER === */
+        .poster-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 1100px;
+            padding: 60px 20px;
+        }
 
-    .poster:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 120px rgba(56, 189, 248, 0.5);
-    }
+        .poster {
+            background: url('./XII-2_KELOMPOK%201.png') no-repeat center top;
+            background-size: contain;
+            width: 100%;
+            height: 1500px;
+            border-radius: 20px;
+            box-shadow: 0 0 80px rgba(14, 165, 233, 0.3);
+            transition: transform 0.8s ease, box-shadow 0.8s ease;
+        }
 
-    /* === SECTION KUIS === */
-    .quiz-section {
-      background: rgba(15, 23, 42, 0.7);
-      border-top: 2px solid rgba(56, 189, 248, 0.4);
-      margin-top: 80px;
-      padding: 60px 20px;
-      text-align: center;
-      box-shadow: 0 -5px 30px rgba(56, 189, 248, 0.2);
-    }
+        .poster:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 120px rgba(56, 189, 248, 0.5);
+        }
 
-    .quiz-section h2 {
-      font-size: 2rem;
-      color: #38bdf8;
-      margin-bottom: 20px;
-      text-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
-    }
+        /* === SECTION KUIS === */
+        .quiz-section {
+            background: rgba(15, 23, 42, 0.7);
+            border-top: 2px solid rgba(56, 189, 248, 0.4);
+            margin-top: 80px;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 -5px 30px rgba(56, 189, 248, 0.2);
+        }
 
-    /* === INTRO KUIS === */
-    .quiz-intro {
-      padding: 40px;
-      background: rgba(30, 41, 59, 0.8);
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(37, 99, 235, 0.3);
-      max-width: 600px;
-      margin: 0 auto;
-      animation: fadeIn 1s ease;
-    }
+        .quiz-section h2 {
+            font-size: 2rem;
+            color: #38bdf8;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+        }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
+        /* === INTRO KUIS === */
+        .quiz-intro {
+            padding: 40px;
+            background: rgba(30, 41, 59, 0.8);
+            border-radius: 16px;
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.3);
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease;
+        }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-    .start-btn {
-      background: linear-gradient(90deg, #2563eb, #38bdf8);
-      color: #f0f9ff;
-      border: none;
-      padding: 15px 40px;
-      border-radius: 40px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 30px;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
-      transition: all 0.3s ease;
-    }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .start-btn:hover {
-      background: linear-gradient(90deg, #38bdf8, #2563eb);
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(56, 189, 248, 0.7);
-    }
+        .start-btn {
+            background: linear-gradient(90deg, #2563eb, #38bdf8);
+            color: #f0f9ff;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 30px;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+            transition: all 0.3s ease;
+        }
 
-    /* === BOX KUIS === */
-    .quiz-box {
-      display: none;
-      max-width: 650px;
-      margin: 0 auto;
-      background: rgba(30, 41, 59, 0.8);
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 0 25px rgba(37, 99, 235, 0.3);
-      text-align: left;
-      position: relative;
-    }
+        .start-btn:hover {
+            background: linear-gradient(90deg, #38bdf8, #2563eb);
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.7);
+        }
 
-    .quiz-box h3 {
-      font-size: 1.2rem;
-      color: #e0f2fe;
-      margin-bottom: 15px;
-    }
 
-    .option {
-      background: rgba(51, 65, 85, 0.8);
-      color: #f1f5f9;
-      border: none;
-      border-radius: 10px;
-      padding: 10px 15px;
-      width: 100%;
-      margin: 8px 0;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-align: left;
-      font-size: 1rem;
-    }
+        /* === BOX KUIS === */
+        .quiz-box {
+            display: none;
+            max-width: 650px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.8);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.3);
+            text-align: left;
+            position: relative;
+        }
 
-    .option:hover:not(:disabled) {
-      background: rgba(59, 130, 246, 0.8);
-      transform: translateX(5px);
-    }
+        .quiz-box h3 {
+            font-size: 1.2rem;
+            color: #e0f2fe;
+            margin-bottom: 15px;
+        }
 
-    .option:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-    }
+        .option {
+            background: rgba(51, 65, 85, 0.8);
+            color: #f1f5f9;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 15px;
+            width: 100%;
+            margin: 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            font-size: 1rem;
+        }
 
-    .timer {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: rgba(56, 189, 248, 0.15);
-      border: 1px solid rgba(56, 189, 248, 0.5);
-      color: #38bdf8;
-      font-weight: 600;
-      padding: 5px 12px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-    }
+        .option:hover:not(:disabled) {
+            background: rgba(59, 130, 246, 0.8);
+            transform: translateX(5px);
+        }
 
-    .next-btn {
-      background: #38bdf8;
-      color: #0f172a;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 700;
-      margin-top: 20px;
-      cursor: pointer;
-      display: none;
-      transition: all 0.3s ease;
-    }
+        .option:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
 
-    .next-btn:hover {
-      background: #60a5fa;
-      transform: scale(1.05);
-    }
+        .timer {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: rgba(56, 189, 248, 0.15);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            color: #38bdf8;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
 
-    /* === REVIEW BUTTON === */
-    .review-btn {
-      background: linear-gradient(90deg, #1e3a8a, #2563eb, #38bdf8);
-      background-size: 300% 100%;
-      color: #f0f9ff;
-      border: none;
-      padding: 14px 36px;
-      border-radius: 40px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 1.05rem;
-      margin-top: 25px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      transition: all 0.4s ease;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
-      animation: pulseGlow 2s infinite alternate;
-    }
+        /* === TRANSISI ANTARA POSTER DAN KUIS === */
+        .poster-transition {
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: rgba(10, 15, 43, 0.75);
+            box-shadow: 0 -5px 30px rgba(56, 189, 248, 0.2);
+            border-top: 1px solid rgba(56, 189, 248, 0.3);
+        }
 
-    @keyframes pulseGlow {
-      0% {
-        box-shadow: 0 0 10px rgba(56, 189, 248, 0.4),
-          0 0 30px rgba(56, 189, 248, 0.2);
-      }
+        .quote-box {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #f0f9ff;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+            font-style: italic;
+            animation: fadeIn 1.5s ease;
+        }
 
-      100% {
-        box-shadow: 0 0 25px rgba(56, 189, 248, 0.9),
-          0 0 60px rgba(56, 189, 248, 0.7);
-      }
-    }
+        .quote-box p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #94a3b8;
+            font-style: normal;
+        }
 
-    /* === SECTION TIM === */
-    .team-section {
-      margin-top: 100px;
-      padding: 80px 20px;
-      background: rgba(10, 15, 43, 0.85);
-      text-align: center;
-      box-shadow: 0 -10px 40px rgba(37, 99, 235, 0.3);
-      border-top: 2px solid rgba(56, 189, 248, 0.3);
-    }
+        /* NEON LINE DIVIDER */
+        .neon-divider {
+            height: 4px;
+            width: 80%;
+            margin: 40px auto;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #38bdf8, #2563eb, #1e3a8a);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.7);
+            animation: glowLine 3s infinite alternate;
+        }
 
-    .team-section h2 {
-      font-size: 2rem;
-      color: #38bdf8;
-      margin-bottom: 40px;
-      text-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
-    }
+        @keyframes glowLine {
+            from {
+                box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+            }
 
-    .team-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
+            to {
+                box-shadow: 0 0 35px rgba(56, 189, 248, 0.9);
+            }
+        }
 
-    .member {
-      background: rgba(30, 41, 59, 0.8);
-      padding: 20px;
-      border-radius: 16px;
-      width: 220px;
-      box-shadow: 0 0 25px rgba(37, 99, 235, 0.3);
-      transition: all 0.3s ease;
-    }
+        /* CTA KUIS */
+        .cta-section h3 {
+            color: #38bdf8;
+            font-size: 1.6rem;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+        }
 
-    .member:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 40px rgba(56, 189, 248, 0.6);
-    }
+        .cta-section p {
+            color: #94a3b8;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
 
-    .member img {
-      width: 100%;
-      border-radius: 12px;
-      margin-bottom: 15px;
-    }
+        .cta-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 36px;
+            border-radius: 40px;
+            background: linear-gradient(90deg, #2563eb, #38bdf8);
+            color: #f0f9ff;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+            transition: all 0.3s ease;
+            animation: pulseGlow 2s infinite alternate;
+        }
 
-    .member h3 {
-      font-size: 1.1rem;
-      color: #f0f9ff;
-    }
+        .cta-btn:hover {
+            transform: scale(1.08);
+            background: linear-gradient(90deg, #38bdf8, #2563eb);
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.8);
+        }
 
-    .member p {
-      font-size: 0.9rem;
-      color: #94a3b8;
-      margin-top: 5px;
-    }
+        .next-btn {
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 20px;
+            cursor: pointer;
+            display: none;
+            transition: all 0.3s ease;
+        }
 
-    footer {
-      text-align: center;
-      color: #94a3b8;
-      font-size: 0.9rem;
-      margin: 40px 0 20px;
-      opacity: 0.7;
-    }
-  </style>
+        .next-btn:hover {
+            background: #60a5fa;
+            transform: scale(1.05);
+        }
+
+        /* === REVIEW BUTTON === */
+        .review-btn {
+            background: linear-gradient(90deg, #1e3a8a, #2563eb, #38bdf8);
+            background-size: 300% 100%;
+            color: #f0f9ff;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+            animation: pulseGlow 2s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 10px rgba(56, 189, 248, 0.4),
+                    0 0 30px rgba(56, 189, 248, 0.2);
+            }
+
+            100% {
+                box-shadow: 0 0 25px rgba(56, 189, 248, 0.9),
+                    0 0 60px rgba(56, 189, 248, 0.7);
+            }
+        }
+
+        /* === SECTION TIM === */
+        .team-section {
+            margin-top: 100px;
+            padding: 80px 20px;
+            background: rgba(10, 15, 43, 0.85);
+            text-align: center;
+            box-shadow: 0 -10px 40px rgba(37, 99, 235, 0.3);
+            border-top: 2px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .team-section h2 {
+            font-size: 2rem;
+            color: #38bdf8;
+            margin-bottom: 40px;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+        }
+
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .member {
+            background: rgba(30, 41, 59, 0.8);
+            padding: 20px;
+            border-radius: 16px;
+            width: 220px;
+            box-shadow: 0 0 25px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .member:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 40px rgba(56, 189, 248, 0.6);
+        }
+
+        .member img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .member h3 {
+            font-size: 1.1rem;
+            color: #f0f9ff;
+        }
+
+        .member p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin: 40px 0 20px;
+            opacity: 0.7;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="bg-futuristik"></div>
-  <div class="poster-wrapper">
-    <div class="poster"></div>
-  </div>
-
-  <!-- === KUIS === -->
-  <section class="quiz-section">
-    <h2>🧠 Kuis Keamanan Digital Tingkat Lanjut</h2>
-    <div class="quiz-intro" id="quizIntro">
-      <p>Uji pemahamanmu tentang dunia keamanan digital!<br />Kamu akan mendapatkan 5 pertanyaan dengan waktu 10 detik per soal.</p>
-      <button class="start-btn" id="startBtn">🚀 Mulai Kuis</button>
+    <div class="bg-futuristik"></div>
+    <div class="poster-wrapper">
+        <div class="poster"></div>
     </div>
+<!-- === TRANSISI DARI POSTER KE KUIS === -->
+    <section class="poster-transition">
+        <div class="quote-box">
+            <blockquote>
+                “Keamanan digital bukan hanya tentang teknologi, tetapi juga kesadaran manusia untuk melindungi masa
+                depan.”
+            </blockquote>
+            <p>- Ka Cilla - </p>
+        </div>
 
-    <div class="quiz-box" id="quizBox">
-      <div class="timer" id="timer">⏱ 10s</div>
-      <h3 id="question"></h3>
-      <div id="options"></div>
-      <button class="next-btn" id="nextBtn">Selanjutnya</button>
-    </div>
+        <div class="neon-divider"></div>
 
-    <div class="result" id="result"></div>
-  </section>
+       
+    <!-- === KUIS === -->
+    <section class="quiz-section">
+        <h2>🧠 Kuis Keamanan Digital Tingkat Lanjut</h2>
+        <div class="quiz-intro" id="quizIntro">
+            <p>Uji pemahamanmu tentang dunia keamanan digital!<br />Kamu akan mendapatkan 5 pertanyaan dengan waktu 10
+                detik per soal.</p>
+            <button class="start-btn" id="startBtn">🚀 Mulai Kuis</button>
+        </div>
 
-  <!-- === TIM === -->
-  <section class="team-section">
-    <h2>👥 Group 1 Member | XII-2</h2>
-    <div class="team-container">
-      <div class="member">
-        <img src="anin.jpeg" alt="Chief" />
-        <h3>Anindya Harning</h3>
-        <p>Chief</p>
-      </div>
-      <div class="member">
-        <img src="cilla.jpeg" alt="Researcher 1" />
-        <h3>Syatilla Tussalwa</h3>
-        <p>Researcher</p>
-      </div>
-      <div class="member">
-        <img src="viola.jpeg" alt="Researcher 2" />
-        <h3>Viola Ramadhini</h3>
-        <p>Researcher</p>
-      </div>
-      <div class="member">
-        <img src="abim.jpeg" alt="Researcher 3" />
-        <h3>Abimanyu Satya</h3>
-        <p>Researcher</p>
-      </div>
-      <div class="member">
-        <img src="iqbal.png" alt="Web Dev" />
-        <h3>Iqbal Amrullah</h3>
-        <p>Web Developer</p>
-      </div>
-    </div>
-  </section>
+        <div class="quiz-box" id="quizBox">
+            <div class="timer" id="timer">⏱ 10s</div>
+            <h3 id="question"></h3>
+            <div id="options"></div>
+            <button class="next-btn" id="nextBtn">Selanjutnya</button>
+        </div>
 
-  <footer>© XII-2 2025 | Interactive Design by Group 1</footer>
+        <div class="result" id="result"></div>
+    </section>
 
-  <script>
-  const startBtn = document.getElementById("startBtn");
-  const quizIntro = document.getElementById("quizIntro");
-  const quizBox = document.getElementById("quizBox");
-  const questionEl = document.getElementById("question");
-  const optionsEl = document.getElementById("options");
-  const nextBtn = document.getElementById("nextBtn");
-  const timerEl = document.getElementById("timer");
-  const resultEl = document.getElementById("result");
+    <!-- === TIM === -->
+    <section class="team-section">
+        <h2>👥 Group 1 Member | XII-2</h2>
+        <div class="team-container">
+            <div class="member">
+                <img src="anin.jpeg" alt="Chief" />
+                <h3>Anindya Harning</h3>
+                <p>Chief</p>
+            </div>
+            <div class="member">
+                <img src="cilla.jpeg" alt="Researcher 1" />
+                <h3>Syatilla Tussalwa</h3>
+                <p>Researcher</p>
+            </div>
+            <div class="member">
+                <img src="viola.jpeg" alt="Researcher 2" />
+                <h3>Viola Ramadhini</h3>
+                <p>Researcher</p>
+            </div>
+            <div class="member">
+                <img src="abim.jpeg" alt="Researcher 3" />
+                <h3>Abimanyu Satya</h3>
+                <p>Researcher</p>
+            </div>
+            <div class="member">
+                <img src="iqbal.png" alt="Web Dev" />
+                <h3>Iqbal Amrullah</h3>
+                <p>Web Developer</p>
+            </div>
+        </div>
+    </section>
 
-  const quizData = [
-    {
-      question: "1. Apa perbedaan utama antara serangan DDoS dan DoS?",
-      options: [
-        { text: "DDoS melibatkan banyak perangkat untuk menyerang satu target", correct: true },
-        { text: "DoS lebih sulit dideteksi", correct: false },
-        { text: "DDoS hanya terjadi di jaringan lokal", correct: false },
-        { text: "DoS adalah versi terenkripsi dari DDoS", correct: false }
-      ]
-    },
-    {
-      question: "2. Teknik keamanan apa yang digunakan untuk memverifikasi integritas pesan digital?",
-      options: [
-        { text: "Hashing", correct: true },
-        { text: "Data Compression", correct: false },
-        { text: "Tokenization", correct: false },
-        { text: "Steganography", correct: false }
-      ]
-    },
-    {
-      question: "3. Dalam konteks keamanan siber, apa fungsi dari protokol TLS dibanding HTTP biasa?",
-      options: [
-        { text: "Menyediakan enkripsi end-to-end antara klien dan server", correct: true },
-        { text: "Menambah kecepatan transfer data", correct: false },
-        { text: "Menghapus cookies dari browser", correct: false },
-        { text: "Mengizinkan akses anonim", correct: false }
-      ]
-    },
-    {
-      question: "4. Manakah dari berikut ini yang merupakan praktik keamanan kata sandi yang benar?",
-      options: [
-        { text: "Menggunakan kombinasi huruf besar, kecil, angka, dan simbol acak", correct: true },
-        { text: "Menggunakan tanggal lahir karena mudah diingat", correct: false },
-        { text: "Menggunakan kata yang sama untuk semua akun", correct: false },
-        { text: "Menulis kata sandi di catatan ponsel", correct: false }
-      ]
-    },
-    {
-      question: "5. Dalam konsep keamanan jaringan, apa fungsi utama dari firewall?",
-      options: [
-        { text: "Menyaring lalu lintas jaringan untuk mencegah akses tidak sah", correct: true },
-        { text: "Menghapus malware dari sistem", correct: false },
-        { text: "Mempercepat koneksi antar server", correct: false },
-        { text: "Menggandakan data sebagai backup", correct: false }
-      ]
-    }
-  ];
+    <footer>© XII-2 2025 | Interactive Design by Group 1</footer>
 
-  let currentQuestion = 0;
-  let score = 0;
-  let answers = [];
-  let timer;
-  let timeLeft = 10;
+    <script>
+        const startBtn = document.getElementById("startBtn");
+        const quizIntro = document.getElementById("quizIntro");
+        const quizBox = document.getElementById("quizBox");
+        const questionEl = document.getElementById("question");
+        const optionsEl = document.getElementById("options");
+        const nextBtn = document.getElementById("nextBtn");
+        const timerEl = document.getElementById("timer");
+        const resultEl = document.getElementById("result");
 
-  startBtn.addEventListener("click", () => {
-    quizIntro.style.display = "none";
-    quizBox.style.display = "block";
-    loadQuestion();
-  });
+        const quizData = [
+            {
+                question: "1. Apa perbedaan utama antara serangan DDoS dan DoS?",
+                options: [
+                    { text: "DDoS melibatkan banyak perangkat untuk menyerang satu target", correct: true },
+                    { text: "DoS lebih sulit dideteksi", correct: false },
+                    { text: "DDoS hanya terjadi di jaringan lokal", correct: false },
+                    { text: "DoS adalah versi terenkripsi dari DDoS", correct: false }
+                ]
+            },
+            {
+                question: "2. Teknik keamanan apa yang digunakan untuk memverifikasi integritas pesan digital?",
+                options: [
+                    { text: "Hashing", correct: true },
+                    { text: "Data Compression", correct: false },
+                    { text: "Tokenization", correct: false },
+                    { text: "Steganography", correct: false }
+                ]
+            },
+            {
+                question: "3. Dalam konteks keamanan siber, apa fungsi dari protokol TLS dibanding HTTP biasa?",
+                options: [
+                    { text: "Menyediakan enkripsi end-to-end antara klien dan server", correct: true },
+                    { text: "Menambah kecepatan transfer data", correct: false },
+                    { text: "Menghapus cookies dari browser", correct: false },
+                    { text: "Mengizinkan akses anonim", correct: false }
+                ]
+            },
+            {
+                question: "4. Manakah dari berikut ini yang merupakan praktik keamanan kata sandi yang benar?",
+                options: [
+                    { text: "Menggunakan kombinasi huruf besar, kecil, angka, dan simbol acak", correct: true },
+                    { text: "Menggunakan tanggal lahir karena mudah diingat", correct: false },
+                    { text: "Menggunakan kata yang sama untuk semua akun", correct: false },
+                    { text: "Menulis kata sandi di catatan ponsel", correct: false }
+                ]
+            },
+            {
+                question: "5. Dalam konsep keamanan jaringan, apa fungsi utama dari firewall?",
+                options: [
+                    { text: "Menyaring lalu lintas jaringan untuk mencegah akses tidak sah", correct: true },
+                    { text: "Menghapus malware dari sistem", correct: false },
+                    { text: "Mempercepat koneksi antar server", correct: false },
+                    { text: "Menggandakan data sebagai backup", correct: false }
+                ]
+            }
+        ];
 
-  function startTimer() {
-    clearInterval(timer);
-    timeLeft = 10;
-    timerEl.textContent = `⏱ ${timeLeft}s`;
+        let currentQuestion = 0;
+        let score = 0;
+        let answers = [];
+        let timer;
+        let timeLeft = 10;
 
-    timer = setInterval(() => {
-      timeLeft--;
-      timerEl.textContent = `⏱ ${timeLeft}s`;
-      if (timeLeft <= 0) {
-        clearInterval(timer);
-        lockOptions();
-        nextBtn.style.display = "block";
-      }
-    }, 1000);
-  }
+        startBtn.addEventListener("click", () => {
+            quizIntro.style.display = "none";
+            quizBox.style.display = "block";
+            loadQuestion();
+        });
 
-  function lockOptions() {
-    document.querySelectorAll(".option").forEach(btn => btn.disabled = true);
-  }
+        function startTimer() {
+            clearInterval(timer);
+            timeLeft = 10;
+            timerEl.textContent = `⏱ ${timeLeft}s`;
 
-  function loadQuestion() {
-    const q = quizData[currentQuestion];
-    questionEl.textContent = q.question;
-    optionsEl.innerHTML = "";
-    nextBtn.style.display = "none";
-    startTimer();
+            timer = setInterval(() => {
+                timeLeft--;
+                timerEl.textContent = `⏱ ${timeLeft}s`;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    lockOptions();
+                    nextBtn.style.display = "block";
+                }
+            }, 1000);
+        }
 
-    q.options.forEach(opt => {
-      const btn = document.createElement("button");
-      btn.classList.add("option");
-      btn.textContent = opt.text;
-      btn.addEventListener("click", () => {
-        if (btn.disabled) return;
-        clearInterval(timer);
-        lockOptions();
-        answers[currentQuestion] = opt.text;
-        if (opt.correct) score++;
-        nextBtn.style.display = "block";
-      });
-      optionsEl.appendChild(btn);
-    });
-  }
+        function lockOptions() {
+            document.querySelectorAll(".option").forEach(btn => btn.disabled = true);
+        }
 
-  nextBtn.addEventListener("click", () => {
-    currentQuestion++;
-    if (currentQuestion < quizData.length) {
-      loadQuestion();
-    } else {
-      showResult();
-    }
-  });
+        function loadQuestion() {
+            const q = quizData[currentQuestion];
+            questionEl.textContent = q.question;
+            optionsEl.innerHTML = "";
+            nextBtn.style.display = "none";
+            startTimer();
 
-  function showResult() {
-    quizBox.style.display = "none";
-    resultEl.innerHTML = `
+            q.options.forEach(opt => {
+                const btn = document.createElement("button");
+                btn.classList.add("option");
+                btn.textContent = opt.text;
+                btn.addEventListener("click", () => {
+                    if (btn.disabled) return;
+                    clearInterval(timer);
+                    lockOptions();
+                    answers[currentQuestion] = opt.text;
+                    if (opt.correct) score++;
+                    nextBtn.style.display = "block";
+                });
+                optionsEl.appendChild(btn);
+            });
+        }
+
+        nextBtn.addEventListener("click", () => {
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        });
+
+        function showResult() {
+            quizBox.style.display = "none";
+            resultEl.innerHTML = `
       <h3>🎯 Hasil Kuis Kamu</h3>
       <p>Skor Akhir: <strong>${score}/${quizData.length}</strong></p>
       <button class="review-btn" onclick="reviewAnswers()">🔍 Review Jawaban</button>
     `;
-  }
+        }
 
-  function reviewAnswers() {
-    const correctCount = score;
-    const wrongCount = quizData.length - score;
+        function reviewAnswers() {
+            const correctCount = score;
+            const wrongCount = quizData.length - score;
 
-    resultEl.innerHTML = `
+            resultEl.innerHTML = `
       <h3>📘 Review Jawaban Kamu</h3>
       <ul style="list-style:none; padding:0; text-align:left; display:inline-block; max-width:600px;">
         ${quizData.map((q, i) => `
@@ -516,8 +613,12 @@
         ❌ Jumlah Salah: <span style="color:#ef4444;">${wrongCount}</span>
       </div>
     `;
-  }
-</script>
+        }
+    </script>
+
+    
+    </section>
+
 
 </body>
 
