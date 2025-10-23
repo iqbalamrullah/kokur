@@ -44,29 +44,71 @@
             }
         }
 
-        /* === POSTER === */
+        /* === POSTER RESPONSIF === */
         .poster-wrapper {
             display: flex;
             justify-content: center;
+            align-items: center;
             margin: 0 auto;
-            max-width: 1100px;
-            padding: 60px 20px;
+            max-width: 1500px;
+            padding: 80px 20px;
         }
 
         .poster {
             background: url('./XII-2_KELOMPOK%201.png') no-repeat center top;
             background-size: contain;
             width: 100%;
-            height: 1500px;
+            max-width: 1000px;
+            aspect-ratio: 4 / 5;
             border-radius: 20px;
-            box-shadow: 0 0 80px rgba(14, 165, 233, 0.3);
-            transition: transform 0.8s ease, box-shadow 0.8s ease;
+            box-shadow: 0 0 60px rgba(14, 165, 233, 0.25);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+
         }
 
-        .poster:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 120px rgba(56, 189, 248, 0.5);
+        /* Hover efek untuk desktop */
+        @media (hover: hover) {
+            .poster:hover {
+                transform: scale(1.02);
+                box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+            }
         }
+
+        /* === RESPONSIVE DESIGN === */
+
+        /* Tablet (lebar < 1024px) */
+        @media (max-width: 1024px) {
+            .poster-wrapper {
+                padding: 40px 16px;
+            }
+
+            .poster {
+                aspect-ratio: 3 / 5;
+                border-radius: 14px;
+            }
+        }
+
+        /* HP (lebar < 600px) */
+        @media (max-width: 600px) {
+            .poster-wrapper {
+                padding: 30px 10px;
+            }
+
+            .poster {
+                aspect-ratio: 3 / 5.5;
+                border-radius: 12px;
+                box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
+            }
+        }
+
+        /* HP kecil (lebar < 400px) */
+        @media (max-width: 400px) {
+            .poster {
+                aspect-ratio: 2.8 / 5.5;
+                border-radius: 10px;
+            }
+        }
+
 
         /* === SECTION KUIS === */
         .quiz-section {
@@ -280,7 +322,7 @@
             display: none;
             transition: all 0.3s ease;
         }
-        
+
 
         .next-btn:hover {
             background: #60a5fa;
@@ -388,7 +430,7 @@
     <div class="poster-wrapper">
         <div class="poster"></div>
     </div>
-<!-- === TRANSISI DARI POSTER KE KUIS === -->
+    <!-- === TRANSISI DARI POSTER KE KUIS === -->
     <section class="poster-transition">
         <div class="quote-box">
             <blockquote>
@@ -400,196 +442,197 @@
 
         <div class="neon-divider"></div>
 
-       
-    <!-- === KUIS === -->
-    <section class="quiz-section">
-        <h2>🧠 SERU SERUAN YOK</h2>
-        <div class="quiz-intro" id="quizIntro">
-            <p>Uji pemahamanmu tentang dunia keamanan digital!<br />Kamu akan mendapatkan 5 pertanyaan dengan waktu 7
-                detik per soal.</p>
-            <button class="start-btn" id="startBtn">🚀 Mulai Kuis</button>
-        </div>
 
-        <div class="quiz-box" id="quizBox">
-            <div class="timer" id="timer">⏱ 7s</div>
-            <h3 id="question"></h3>
-            <div id="options"></div>
-            <button class="next-btn" id="nextBtn">Selanjutnya</button>
-        </div>
-
-        <div class="result" id="result"></div>
-    </section>
-
-    <!-- === TIM === -->
-    <section class="team-section">
-        <h2>👥 Group 1 | XII-2</h2>
-        <div class="team-container">
-            <div class="member">
-                <img src="anin.jpeg" alt="Chief" />
-                <h3>Anindya Harning</h3>
-                <p>Chief</p>
+        <!-- === KUIS === -->
+        <section class="quiz-section">
+            <h2>🧠 SERU SERUAN YOK</h2>
+            <div class="quiz-intro" id="quizIntro">
+                <p>Uji pemahamanmu tentang dunia keamanan digital!<br />Kamu akan mendapatkan 5 pertanyaan dengan waktu
+                    7
+                    detik per soal.</p>
+                <button class="start-btn" id="startBtn">🚀 Mulai Kuis</button>
             </div>
-            <div class="member">
-                <img src="cilla.jpeg" alt="Researcher 1" />
-                <h3>Syatilla Tussalwa</h3>
-                <p>Researcher</p>
+
+            <div class="quiz-box" id="quizBox">
+                <div class="timer" id="timer">⏱ 7s</div>
+                <h3 id="question"></h3>
+                <div id="options"></div>
+                <button class="next-btn" id="nextBtn">Selanjutnya</button>
             </div>
-            <div class="member">
-                <img src="viola.jpeg" alt="Researcher 2" />
-                <h3>Viola Ramadhini</h3>
-                <p>Researcher</p>
+
+            <div class="result" id="result"></div>
+        </section>
+
+        <!-- === TIM === -->
+        <section class="team-section">
+            <h2>👥 Group 1 | XII-2</h2>
+            <div class="team-container">
+                <div class="member">
+                    <img src="anin.jpeg" alt="Chief" />
+                    <h3>Anindya Harning</h3>
+                    <p>Chief</p>
+                </div>
+                <div class="member">
+                    <img src="cilla.jpeg" alt="Researcher 1" />
+                    <h3>Syatilla Tussalwa</h3>
+                    <p>Researcher</p>
+                </div>
+                <div class="member">
+                    <img src="viola.jpeg" alt="Researcher 2" />
+                    <h3>Viola Ramadhini</h3>
+                    <p>Researcher</p>
+                </div>
+                <div class="member">
+                    <img src="abim.jpeg" alt="Researcher 3" />
+                    <h3>Abimanyu Satya</h3>
+                    <p>Researcher</p>
+                </div>
+                <div class="member">
+                    <img src="iqbal.png" alt="Web Dev" />
+                    <h3>Iqbal Amrullah</h3>
+                    <p>Web Developer</p>
+                </div>
             </div>
-            <div class="member">
-                <img src="abim.jpeg" alt="Researcher 3" />
-                <h3>Abimanyu Satya</h3>
-                <p>Researcher</p>
-            </div>
-            <div class="member">
-                <img src="iqbal.png" alt="Web Dev" />
-                <h3>Iqbal Amrullah</h3>
-                <p>Web Developer</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>© 2025| Design by Group 1 | Class XII-2</footer>
+        <footer>© 2025| Design by Group 1 | Class XII-2</footer>
 
-    <script>
-        const startBtn = document.getElementById("startBtn");
-        const quizIntro = document.getElementById("quizIntro");
-        const quizBox = document.getElementById("quizBox");
-        const questionEl = document.getElementById("question");
-        const optionsEl = document.getElementById("options");
-        const nextBtn = document.getElementById("nextBtn");
-        const timerEl = document.getElementById("timer");
-        const resultEl = document.getElementById("result");
+        <script>
+            const startBtn = document.getElementById("startBtn");
+            const quizIntro = document.getElementById("quizIntro");
+            const quizBox = document.getElementById("quizBox");
+            const questionEl = document.getElementById("question");
+            const optionsEl = document.getElementById("options");
+            const nextBtn = document.getElementById("nextBtn");
+            const timerEl = document.getElementById("timer");
+            const resultEl = document.getElementById("result");
 
-        const quizData = [
-            {
-                question: "1. Berapa total jumlah kasus dari 2020-2024",
-                options: [
-                    { text: "5+1 kasus", correct: false },
-                    { text: "18/2 kasus", correct: true },
-                    { text: "10-9kasus", correct: false },
-                    { text: "2x4 kasus", correct: false }
-                ]
-            },
-            {
-                question: "2. Apa role Ka Cilla di tim ",
-                options: [
-                    { text: "Researcher", correct: true },
-                    { text: "Data Analyst", correct: false },
-                    { text: "Chief", correct: false },
-                    { text: "Keamanan", correct: false }
-                ]
-            },
-            {
-                question: "3. Kementerian apa yang bertugas dalam menangani hal informasi teknologi?",
-                options: [
-                    { text: "Kominfo", correct: false },
-                    { text: "BIN", correct: false },
-                    { text: "BSSN", correct: false },
-                    { text: "Komdigi", correct: true }
-                ]
-            },
-            {
-                question: "4. Manakah dari berikut ini yang merupakan praktik keamanan kata sandi yang benar?",
-                options: [
-                    { text: "Menggunakan kombinasi huruf besar, kecil, angka, dan simbol acak", correct: true },
-                    { text: "Menggunakan tanggal lahir karena mudah diingat", correct: false },
-                    { text: "Menggunakan kata yang sama untuk semua akun", correct: false },
-                    { text: "Menulis kata sandi di catatan ponsel", correct: false }
-                ]
-            },
-            {
-                question: "5. Dalam konsep keamanan jaringan, apa fungsi utama dari firewall?",
-                options: [
-                    { text: "Menyaring lalu lintas jaringan untuk mencegah akses tidak sah", correct: true },
-                    { text: "Menghapus malware dari sistem", correct: false },
-                    { text: "Mempercepat koneksi antar server", correct: false },
-                    { text: "Menggandakan data sebagai backup", correct: false }
-                ]
-            }
-        ];
-
-        let currentQuestion = 0;
-        let score = 0;
-        let answers = [];
-        let timer;
-        let timeLeft = 10;
-
-        startBtn.addEventListener("click", () => {
-            quizIntro.style.display = "none";
-            quizBox.style.display = "block";
-            loadQuestion();
-        });
-
-        function startTimer() {
-            clearInterval(timer);
-            timeLeft = 7;
-            timerEl.textContent = `⏱ ${timeLeft}s`;
-
-            timer = setInterval(() => {
-                timeLeft--;
-                timerEl.textContent = `⏱ ${timeLeft}s`;
-                if (timeLeft <= 0) {
-                    clearInterval(timer);
-                    lockOptions();
-                    nextBtn.style.display = "block";
+            const quizData = [
+                {
+                    question: "1. Berapa total jumlah kasus dari 2020-2024",
+                    options: [
+                        { text: "5+1 kasus", correct: false },
+                        { text: "18/2 kasus", correct: true },
+                        { text: "10-9kasus", correct: false },
+                        { text: "2x4 kasus", correct: false }
+                    ]
+                },
+                {
+                    question: "2. Apa role Ka Cilla di tim ",
+                    options: [
+                        { text: "Researcher", correct: true },
+                        { text: "Data Analyst", correct: false },
+                        { text: "Chief", correct: false },
+                        { text: "Keamanan", correct: false }
+                    ]
+                },
+                {
+                    question: "3. Kementerian apa yang bertugas dalam menangani hal informasi teknologi?",
+                    options: [
+                        { text: "Kominfo", correct: false },
+                        { text: "BIN", correct: false },
+                        { text: "BSSN", correct: false },
+                        { text: "Komdigi", correct: true }
+                    ]
+                },
+                {
+                    question: "4. Manakah dari berikut ini yang merupakan praktik keamanan kata sandi yang benar?",
+                    options: [
+                        { text: "Menggunakan kombinasi huruf besar, kecil, angka, dan simbol acak", correct: true },
+                        { text: "Menggunakan tanggal lahir karena mudah diingat", correct: false },
+                        { text: "Menggunakan kata yang sama untuk semua akun", correct: false },
+                        { text: "Menulis kata sandi di catatan ponsel", correct: false }
+                    ]
+                },
+                {
+                    question: "5. Dalam konsep keamanan jaringan, apa fungsi utama dari firewall?",
+                    options: [
+                        { text: "Menyaring lalu lintas jaringan untuk mencegah akses tidak sah", correct: true },
+                        { text: "Menghapus malware dari sistem", correct: false },
+                        { text: "Mempercepat koneksi antar server", correct: false },
+                        { text: "Menggandakan data sebagai backup", correct: false }
+                    ]
                 }
-            }, 1000);
-        }
+            ];
 
-        function lockOptions() {
-            document.querySelectorAll(".option").forEach(btn => btn.disabled = true);
-        }
+            let currentQuestion = 0;
+            let score = 0;
+            let answers = [];
+            let timer;
+            let timeLeft = 10;
 
-        function loadQuestion() {
-            const q = quizData[currentQuestion];
-            questionEl.textContent = q.question;
-            optionsEl.innerHTML = "";
-            nextBtn.style.display = "none";
-            startTimer();
-
-            q.options.forEach(opt => {
-                const btn = document.createElement("button");
-                btn.classList.add("option");
-                btn.textContent = opt.text;
-                btn.addEventListener("click", () => {
-                    if (btn.disabled) return;
-                    clearInterval(timer);
-                    lockOptions();
-                    answers[currentQuestion] = opt.text;
-                    if (opt.correct) score++;
-                    nextBtn.style.display = "block";
-                });
-                optionsEl.appendChild(btn);
-            });
-        }
-
-        nextBtn.addEventListener("click", () => {
-            currentQuestion++;
-            if (currentQuestion < quizData.length) {
+            startBtn.addEventListener("click", () => {
+                quizIntro.style.display = "none";
+                quizBox.style.display = "block";
                 loadQuestion();
-            } else {
-                showResult();
-            }
-        });
+            });
 
-        function showResult() {
-            quizBox.style.display = "none";
-            resultEl.innerHTML = `
+            function startTimer() {
+                clearInterval(timer);
+                timeLeft = 7;
+                timerEl.textContent = `⏱ ${timeLeft}s`;
+
+                timer = setInterval(() => {
+                    timeLeft--;
+                    timerEl.textContent = `⏱ ${timeLeft}s`;
+                    if (timeLeft <= 0) {
+                        clearInterval(timer);
+                        lockOptions();
+                        nextBtn.style.display = "block";
+                    }
+                }, 1000);
+            }
+
+            function lockOptions() {
+                document.querySelectorAll(".option").forEach(btn => btn.disabled = true);
+            }
+
+            function loadQuestion() {
+                const q = quizData[currentQuestion];
+                questionEl.textContent = q.question;
+                optionsEl.innerHTML = "";
+                nextBtn.style.display = "none";
+                startTimer();
+
+                q.options.forEach(opt => {
+                    const btn = document.createElement("button");
+                    btn.classList.add("option");
+                    btn.textContent = opt.text;
+                    btn.addEventListener("click", () => {
+                        if (btn.disabled) return;
+                        clearInterval(timer);
+                        lockOptions();
+                        answers[currentQuestion] = opt.text;
+                        if (opt.correct) score++;
+                        nextBtn.style.display = "block";
+                    });
+                    optionsEl.appendChild(btn);
+                });
+            }
+
+            nextBtn.addEventListener("click", () => {
+                currentQuestion++;
+                if (currentQuestion < quizData.length) {
+                    loadQuestion();
+                } else {
+                    showResult();
+                }
+            });
+
+            function showResult() {
+                quizBox.style.display = "none";
+                resultEl.innerHTML = `
       <h3>🎯 Hasil Kuis Kamu</h3>
       <p>Skor Akhir: <strong>${score}/${quizData.length}</strong></p>
       <button class="review-btn" onclick="reviewAnswers()">🔍 Review Jawaban</button>
     `;
-        }
+            }
 
-        function reviewAnswers() {
-            const correctCount = score;
-            const wrongCount = quizData.length - score;
+            function reviewAnswers() {
+                const correctCount = score;
+                const wrongCount = quizData.length - score;
 
-            resultEl.innerHTML = `
+                resultEl.innerHTML = `
       <h3>📘 Review Jawaban Kamu</h3>
       <ul style="list-style:none; padding:0; text-align:left; display:inline-block; max-width:600px;">
         ${quizData.map((q, i) => `
@@ -614,12 +657,12 @@
         ❌ Jumlah Salah: <span style="color:#ef4444;">${wrongCount}</span>
       </div>
     `;
-        }
+            }
 
-        
-    </script>
 
-    
+        </script>
+
+
     </section>
 
 
