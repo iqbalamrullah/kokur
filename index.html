@@ -19,8 +19,8 @@
             background: radial-gradient(circle at 30% 30%, #020617 0%, #0a0f2b 50%, #000 100%);
             color: white;
             overflow-x: hidden;
-            position: relative;
             min-height: 100vh;
+            position: relative;
         }
 
         /* === BACKGROUND FUTURISTIK === */
@@ -45,20 +45,22 @@
 
         /* === POSTER === */
         .poster-wrapper {
-            position: relative;
-            margin: 0 auto;
-            max-width: 1000px;
-            padding: 60px 20px;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            margin: 0 auto;
+            max-width: 1100px;
+            padding: 60px 20px;
+            overflow: hidden;
         }
 
         .poster {
             position: relative;
-            background: url('XII-2_KELOMPOK 1.png') no-repeat center top;
+            background: url('./XII-2_kelompok 1.png') no-repeat center top;
             background-size: contain;
             width: 100%;
-            height: 150vh;
+            height: 1900px;
             border-radius: 20px;
             box-shadow: 0 0 80px rgba(14, 165, 233, 0.3);
         }
@@ -88,20 +90,25 @@
             background: rgba(240, 249, 255, 1);
         }
 
-        /* === POSISI PRESISI (sesuai urutan di poster) === */
+        /* === POSISI PRESISI === */
         .btn-perlindungan {
-            top: 28%;
+            top: 33.5%;
             left: 5%;
         }
 
         .btn-edukasi {
-            top: 36.8%;
+            top: 43.6%;
             left: 9%;
         }
 
         .btn-manajemen {
-            top: 46.6%;
+            top: 55.4%;
             left: 5%;
+        }
+
+        .btn-kasus {
+            top: 30%;
+            right: 8%;
         }
 
         /* === MODAL === */
@@ -175,8 +182,9 @@
 
         @media (max-width: 768px) {
             .poster {
-                height: 200vh;
+                height: auto;
                 background-size: cover;
+                aspect-ratio: 9 / 16;
             }
 
             .btn {
@@ -193,28 +201,33 @@
 
 <body>
 
+    <!-- Background Futuristik -->
     <div class="bg-futuristik"></div>
 
+    <!-- Poster dan Tombol -->
     <div class="poster-wrapper">
         <div class="poster">
-            <!-- Tombol 1 -->
+            <!-- Tombol kiri -->
             <button class="btn btn-perlindungan" data-video="https://www.youtube.com/embed/VIDEO_ID_1">
                 ▶ Perlindungan Sistem dan Data
             </button>
 
-            <!-- Tombol 2 -->
             <button class="btn btn-edukasi" data-video="https://www.youtube.com/embed/VIDEO_ID_2">
                 ▶ Edukasi dan Kebijakan
             </button>
 
-            <!-- Tombol 3 -->
             <button class="btn btn-manajemen" data-video="https://www.youtube.com/embed/VIDEO_ID_3">
                 ▶ Manajemen Keamanan Organisasi
+            </button>
+
+            <!-- Tombol kanan -->
+            <button class="btn btn-kasus" data-video="https://www.youtube.com/embed/VIDEO_ID_4">
+                ▶ Kasus Kebocoran Data
             </button>
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal Video -->
     <div class="modal" id="videoModal">
         <div class="modal-content">
             <button class="close-btn" id="closeModal">✕</button>
